@@ -26,7 +26,7 @@ def respond_to_websockets(message):
         if(ent.label_ == 'PERSON'):
             result_message['text'] = 'Hello ' + ent.text.capitalize()
             found = True
-            continue
+            break
     if not found:
         # If he can't find the name, we assume that the name is the last noun of the sentence
         nouns = [token.text for token in doc if token.pos_ == 'NOUN']
